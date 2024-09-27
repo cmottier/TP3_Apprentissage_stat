@@ -7,7 +7,7 @@ TP d'utilisation de classifieurs SVM contenant :
 
 ## Arborescence
 
-Le compte-rendu de TP et le fichier tex associé sont accessibles dans le dossier `Rapport_tex` (les images utilisées pour illustrer les résultats sont dans le sous-dossier `Images`).
+Le compte-rendu de TP et le fichier .tex associé sont accessibles dans le dossier `Rapport_tex` (les images utilisées pour illustrer les résultats sont dans le sous-dossier `Images`). Le fichier .tex nécessite une installation complète de latex. 
 
 Les fichiers de codes sont dans le dossier `Codes` :
 + `TP3_mottier.py` : code personnel utilisé pour réaliser le TP

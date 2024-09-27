@@ -122,7 +122,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 \end{minted}
 
 \begin{figure}[h!]\centering
-\includegraphics[width=6cm]{iris.png}
+\includegraphics[width=6cm]{Images/iris.png}
 \caption{Classes 1 et 2 du dataset \texttt{iris} en fonction des deux premières variables}
 \label{iris}
 \end{figure}
@@ -155,7 +155,7 @@ L'utilisation de ce noyau donne les scores sur les données d'apprentissage et d
 La figure \ref{qu1} représente le classifieur obtenu par cette méthode.
 
 \begin{figure}[h!]\centering
-\includegraphics[width=4cm]{qu1.png}
+\includegraphics[width=4cm]{Images/qu1.png}
 \caption{Classifieur SVM à noyau linéaire et données d'apprentissage du dataset \texttt{iris}}
 \label{qu1}
 \end{figure}
@@ -178,7 +178,7 @@ Nous souhaitons ici voir si l'emploi d'un noyau polynomial nous permet d'obtenir
 La figure \ref{qu2} représente le classifieur obtenu avec le noyau polynomial.
 
 \begin{figure}[h!]\centering
-\includegraphics[width=4cm]{qu2.png}
+\includegraphics[width=4cm]{Images/qu2.png}
 \caption{Classifieur SVM à noyau polynomial et données d'apprentissage du dataset \texttt{iris}}
 \label{qu2}
 \end{figure}
@@ -188,7 +188,7 @@ Nous constatons que le score obtenu avec un noyau polynomial est plus faible que
  La figure \ref{comp} permet de visualiser  les deux classifieurs sur l'ensemble des données du dataset \texttt{iris}. 
  
 \begin{figure}[h!]\centering
-\includegraphics[width=16cm]{comparaison.png}
+\includegraphics[width=16cm]{Images/comparaison.png}
 \caption{Classifieurs SVM à noyaux linéaire et polynomial et dataset \texttt{iris} (apprentissage et test)}
 \label{comp}
 \end{figure}
@@ -220,7 +220,7 @@ En conclusion, nous confirmons avec cette remarque le choix d'un noyau linéaire
 
  
 \begin{figure}[h!]\centering
-\includegraphics[width=4cm]{rem.png}
+\includegraphics[width=4cm]{Images/rem.png}
 \caption{Classifieurs SVM à noyaux polynomial obtenu par  \texttt{GridSearchCV} (sélectionnant un degré 1) et données d'apprentissage du dataset \texttt{iris}}
 \label{remarque}
 \end{figure}
@@ -234,11 +234,11 @@ examples/applications/svm_gui.html}.\\
 Il nous permet de visualiser l'impact du choix du paramètre de régularisation $C$. Sur l'exemple testé (voir figure \ref{GUI}), nous pouvons observer que plus $C$ est petit, plus les marges sont grandes, c'est-à-dire qu'on s'autorise plus d'erreurs. On peut constater que sur la dernière figure, tous les points noirs sont mal classés. Ceci vient vraisemblablement du fait qu'il y a un déséquilibre entre le nombre de points noirs et le nombre de points rouges (les points noirs ont un poids négligeable par rapport à celui des points rouges). 
 
 \begin{figure}[h!]\centering
-\subfloat[$C=1$]{\includegraphics[width=6cm]{GUI1.png}}
-\subfloat[$C=0.01$]{\includegraphics[width=6cm]{GUI2.png}}
-\subfloat[$C=0.001$]{\includegraphics[width=6cm]{GUI3.png}}\\
-\subfloat[$C=0.0005$]{\includegraphics[width=6cm]{GUI4.png}}
-\subfloat[$C=0.0001$]{\includegraphics[width=6cm]{GUI5.png}}
+\subfloat[$C=1$]{\includegraphics[width=6cm]{Images/GUI1.png}}
+\subfloat[$C=0.01$]{\includegraphics[width=6cm]{Images/GUI2.png}}
+\subfloat[$C=0.001$]{\includegraphics[width=6cm]{Images/GUI3.png}}\\
+\subfloat[$C=0.0005$]{\includegraphics[width=6cm]{Images/GUI4.png}}
+\subfloat[$C=0.0001$]{\includegraphics[width=6cm]{Images/GUI5.png}}
 \caption{Classifieurs fournis par \texttt{svm\_gui.py} sur un jeu de données ``jouet'', en fonction du paramètre de régularisation $C$}
 \label{GUI}
 \end{figure}
@@ -271,7 +271,7 @@ La figure \ref{qu4} représente les résultats obtenus.
 
  
 \begin{figure}[h!]\centering
-\includegraphics[width=10cm]{erreur.png}
+\includegraphics[width=10cm]{Images/erreur.png}
 \caption{Erreur de prédiction en fonction du paramètre de régularisation pour des classifieurs SVM à noyau linéaire, sur une base de donnée d'images}
 \label{qu4}
 \end{figure}
@@ -292,7 +292,7 @@ Le score est élevé, en comparaison à celui obtenu en prédisant toujours la c
 
  
 \begin{figure}[h!]\centering
-\includegraphics[width=15cm]{blair.png}
+\includegraphics[width=12cm]{Images/blair.png}
 \caption{Prédictions faites par le classificateur optimal sur un échantillon d'images}
 \label{blair}
 \end{figure}
@@ -301,7 +301,7 @@ Nous pouvons aussi observer quels sont les pixels (ie les variables) qui ont jou
 
  
 \begin{figure}[h!]\centering
-\includegraphics[width=5cm]{pixel.png}
+\includegraphics[width=5cm]{Images/pixel.png}
 \caption{Poids des différentes variables dans le classifieur optimal obtenu}
 \label{pixel}
 \end{figure}

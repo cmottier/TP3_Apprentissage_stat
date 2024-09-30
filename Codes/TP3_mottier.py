@@ -333,10 +333,15 @@ run_svm_cv(X_noisy,y)
 # Question 6
 ##############
 
+# Scale features
+X_noisy -= np.mean(X_noisy, axis=0)
+X_noisy /= np.std(X_noisy, axis=0)
+
 # PCA
 n_components = 50
 X_pca = PCA(n_components=n_components).fit_transform(X_noisy)
 
 print("Score apres reduction de dimension")
 run_svm_cv(X_pca,y)
+
 

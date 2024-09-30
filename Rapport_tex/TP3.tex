@@ -318,11 +318,11 @@ Generalization score for linear kernel: 1.0, 0.9105263157894737
 
 
 Nous constatons alors que, malgré les variables de bruit ajoutées, le classifieur est toujours d'excellente qualité. On peut supposer que cela vient du fait que nous avons ajouté seulement 300 variables de bruit, avec un écart-type de 1, à 10000 déjà existantes. 
-En bruitant cette fois-ci avec 1000 variables supplémentaires d'écart-type égal à 5, nous voyons se dessiner une baisse de performance, qui reste cependant légère :
+En bruitant cette fois-ci avec 1000 variables supplémentaires d'écart-type égal à 5, nous voyons se dessiner une baisse de performance :
 
 \begin{verbatim}
 Score avec variable de nuisance
-Generalization score for linear kernel: 1.0, 0.8052631578947368 
+Generalization score for linear kernel: 1.0, 0.7473684210526316 
 \end{verbatim}
 
 Il serait peut-être intéressant de chercher à bruiter les variables ayant un poids fort dans la prédiction afin de visualiser l'effet d'un bruit sur ces variables. La performance devrait alors chuter davantage. 
@@ -338,20 +338,26 @@ Il serait peut-être intéressant de chercher à bruiter les variables ayant un 
 Nous cherchons à améliorer la prédiction obtenue dans la question précédente à l'aide d'une réduction de dimension par analyse à composante principale. Voici le code utilisé pour cela : 
 
 \begin{minted}[bgcolor=gray!8]{python}
+# Scale features
+X_noisy -= np.mean(X_noisy, axis=0)
+X_noisy /= np.std(X_noisy, axis=0)
+
+# PCA
+n_components = 50
+X_pca = PCA(n_components=n_components).fit_transform(X_noisy)
+
 print("Score apres reduction de dimension")
-n_components = 50  # nombre de composantes
-X_red = PCA(n_components=n_components).fit_transform(X_noisy)
-run_svm_cv(X_red,y)
+run_svm_cv(X_pca,y)
 \end{minted}
 
 Nous obtenons alors : 
 
 \begin{verbatim}
 Score apres reduction de dimension
-Generalization score for linear kernel: 0.9157894736842105, 0.7736842105263158
+Generalization score for linear kernel: 0.9526315789473684, 0.868421052631579
 \end{verbatim}
 
-Nous remarquons que le score obtenu après l'ACP est moins bon que celui d'origine, ce qui n'est pas très convaincant. Notons qu'en augmentant le nombre de composantes, le score obtenu reste similaire. Il faudrait observer ce qu'il se passe en diminuant le nombre de composantes, mais ma machine n'arrive pas au bout des calculs dans ces cas la. 
+Nous remarquons que le score obtenu après l'ACP est meilleur que celui obtenu avec les variables bruitées, car les directions de bruit ont été supprimées en sélectionnant 50 composantes. Notons qu'en augmentant le nombre de composantes, le score obtenu reste similaire. Il faudrait observer ce qu'il se passe en diminuant le nombre de composantes, mais ma machine n'arrive pas au bout des calculs dans ces cas là. 
 
 
  
